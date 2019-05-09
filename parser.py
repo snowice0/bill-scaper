@@ -1,6 +1,11 @@
-import json
+"""
+for each congressional session 
+get the total number of bills a congress person sponsored or cosponsored
+divided into the subject ( health, military, etc)
+"""
+import os, json, pandas
 
-with open("C:/Users/Platon Candell/Documents/Italy/data/congress/93/bills/s/s1/data.json") as f:
-  data = json.load(f)
+bills = [bill_file for bill_file in os.listdir('bills/') if bill_file.endswith('.json')]
 
-print(data["actions"][0]["acted_at"]) 
+for bill in bills:
+  print(bill)
